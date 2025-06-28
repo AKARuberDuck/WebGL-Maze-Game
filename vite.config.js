@@ -1,4 +1,4 @@
 // vite.config.js
 export default {
-  base: './',
+  base: '/WebGL-Maze-Game/', // Matches your repo name!
 };
