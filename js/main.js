@@ -1,3 +1,6 @@
+import { createParticleSplash, updateParticles } from './particles.js';
+let prevY = 0;
+
 import * as THREE from 'three';
 import { setupPhysics } from './physics.js';
 import { setupControls, keys } from './controls.js';
