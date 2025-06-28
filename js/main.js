@@ -53,6 +53,19 @@ function init() {
 
   // Controls
   setupControls();
+updateParticles(1/60);
+
+// Splash on jump
+if (keys.Space && Math.abs(ballBody.velocity.y) < 0.1) {
+  createParticleSplash(scene, ball.position.clone(), 0x44ff44);
+  ballBody.velocity.y = 10;
+}
+
+// Splash when landing
+if (prevY > ball.position.y && Math.abs(ballBody.velocity.y) < 0.1 && ball.position.y < 1.1) {
+  createParticleSplash(scene, ball.position.clone(), 0xff4444);
+}
+prevY = ball.position.y;
 
   // UI Events
   document.getElementById('startBtn').onclick = () => {
